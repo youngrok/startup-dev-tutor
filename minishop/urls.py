@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	url(r'^$', 'shopping.views.index'),
     # Examples:
     # url(r'^$', 'minishop.views.home', name='home'),
     # url(r'^minishop/', include('minishop.foo.urls')),
