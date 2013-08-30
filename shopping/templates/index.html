@@ -20,33 +20,12 @@
 		</nav>
 
 		<div class="container">
-			<div class="product">
-				<a href="">
-					<img src="http://cf1.thefancy.com/310/20120925/194464028678947571_4dd0af11a528.jpeg">
-				</a>
-				<h5>Melt Ice Cream iPhone Case</h5>
-				<div>$30</div>
-			</div>
-			<div class="product">
-				<a href="">
-					<img src="http://cf2.thefancy.com/310/20130815/428920448655301245_d3e763276a1b.jpg">
-				</a>
-				<h5>Chelsea Sunglasses by House of Harlow</h5>
-				<div>$140 by Coronado + 883 </div>
-			</div>
-			<div class="product">
-				<a href="">
-					<img src="http://cf3.thefancy.com/310/20130814/428620872975126921_4630dfe95185.jpeg">
-				</a>
-				<h5>Metallic Shorts by Nanushka</h5>
-				<div>$150 by Coronado + 1208 </div>
-			</div>
 			{% for product in products %}
 			<div class="product">
-				<a href="">
+				<a href="/product/{{product.id}}">
 					<img src="{{product.image}}">
 				</a>
-				<h5>{{product.title}}</h5>
+				<h5>{{product.name}}</h5>
 				<div>$150 by Coronado + 1208 </div>
 			</div>
 			{% endfor %}
