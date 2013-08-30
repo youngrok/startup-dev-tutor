@@ -5,3 +5,8 @@ class Product(models.Model):
 	image = models.URLField()
 	price = models.IntegerField()
 	description = models.TextField()
+
+class Comment(models.Model):
+	product = models.ForeignKey(Product)
+	content = models.TextField()
+	created = models.DateTimeField(auto_now_add=True)

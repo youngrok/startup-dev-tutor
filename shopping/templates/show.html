@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>minishop</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="product">
+				<a href="/product/{{product.id}}">
+					<img src="{{product.image}}">
+				</a>
+				<h5>{{product.name}}</h5>
+				<div>{{product.price}}</div>
+				<pre>{{product.description}}</pre>
+			</div>
+
+			<ul>
+			{% for comment in comments %}
+				<li>{{comment.content}} <a href="/comment/delete/{{comment.id}}">x</a></li>
+			{% endfor %}
+			</ul>
+			<form action="/comment/create" method="post">
+				<fieldset>
+					<label>댓글</label>
+					<input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
+					<input type="hidden" name="product" value="{{product.id}}">
+					<textarea name="comment"></textarea>
+					<input type="submit" value="댓글쓰기">
+				</fieldset>
+			</form>
+		</div>
+
+	</body>
+</html>

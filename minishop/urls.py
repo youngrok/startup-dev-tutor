@@ -6,6 +6,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', 'shopping.views.index'),
+	url(r'product/(?P<resource_id>\d+)', 'shopping.views.show'),
+	url(r'comment/create', 'shopping.views.comment'),
+	url(r'comment/delete/(?P<resource_id>\d+)', 'shopping.views.delete_comment'),
     # Examples:
     # url(r'^$', 'minishop.views.home', name='home'),
     # url(r'^minishop/', include('minishop.foo.urls')),
