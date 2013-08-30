@@ -1,47 +1,67 @@
 <html>
 	<head>
+		<title>minishop</title>
 		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-
+		<style type="text/css">
+			.product {float: left; width: 240px; padding: 10px; }
+			.product img {width: 200px; }
+			.product h5 { height: 20px;}
+		</style>
 	</head>
 
 	<body>
-		<h1>Hello World!!</h1>
-		<h2>using templates</h2>
-
-		<a href="http://naver.com" class="btn btn-primary">Naver</a>
-		<a href="http://google.com" class="btn btn-default">Google</a>
-
-		<p>This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph. This is paragraph.</p>
-
-		<div style="float:left">div tag is a general purpose building block.</div>
-		<div style="float:right; background-color: yellow; padding: 10px; margin: 10px; border: 1px solid blue">div tag is a general purpose building block.</div>
-
-		<table class="table-bordered">
-			<thead>
-				<tr>
-					<th>Product</th>
-					<th>Price</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>iPhone</td>
-					<td>$599</td>		
-				</tr>
-				<tr>
-					<td>iPad</td>
-					<td>$499</td>		
-				</tr>
-			</tbody>
-		</table>
+		<nav class="navbar navbar-default" role="navigation">
+		    <div class="navbar-header">
+		        <a class="navbar-brand" href="#">MiniShop</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		    	<li><a href="/">Featured</a></li>
+		    </ul>
+		</nav>
 
 		<div class="container">
-
-			<ul class="list-group">
-				<li class="list-group-item">HTML</li>
-				<li class="list-group-item">CSS</li>
-				<li class="list-group-item">Python</li>
-			</ul>
+			<div class="product">
+				<a href="">
+					<img src="http://cf1.thefancy.com/310/20120214/289415035_d6469f2993ad.jpg">
+				</a>
+				<h5>Black Playing Cards by Alexander Wang</h5>
+				<div>$65</div>
+			</div>
+			<div class="product">
+				<a href="">
+					<img src="http://cf1.thefancy.com/310/20130809/425270740795788563_438ded56c635.jpeg">
+				</a>
+				<h5>Sol Republic Deck Wireless Speaker</h5>
+				<div>$215 by LLKoOLReL + 2089 </div>
+			</div>
+			<div class="product">
+				<a href="">
+					<img src="http://cf2.thefancy.com/310/20130814/428701096857310275_f5f274324539.jpg">
+				</a>
+				<h5>Neon Yellow Anchor Bracelet by Miansai</h5>
+				<div>$68</div>
+			</div>
+			<div class="product">
+				<a href="">
+					<img src="http://cf1.thefancy.com/310/20120925/194464028678947571_4dd0af11a528.jpeg">
+				</a>
+				<h5>Melt Ice Cream iPhone Case</h5>
+				<div>$30</div>
+			</div>
+			<div class="product">
+				<a href="">
+					<img src="http://cf2.thefancy.com/310/20130815/428920448655301245_d3e763276a1b.jpg">
+				</a>
+				<h5>Chelsea Sunglasses by House of Harlow</h5>
+				<div>$140 by Coronado + 883 </div>
+			</div>
+			<div class="product">
+				<a href="">
+					<img src="http://cf3.thefancy.com/310/20130814/428620872975126921_4630dfe95185.jpeg">
+				</a>
+				<h5>Metallic Shorts by Nanushka</h5>
+				<div>$150 by Coronado + 1208 </div>
+			</div>
 		</div>
 	</body>
 </html>
