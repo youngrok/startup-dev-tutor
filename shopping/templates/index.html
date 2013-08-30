@@ -62,6 +62,15 @@
 				<h5>Metallic Shorts by Nanushka</h5>
 				<div>$150 by Coronado + 1208 </div>
 			</div>
+			{% for product in products %}
+			<div class="product">
+				<a href="">
+					<img src="{{product.image}}">
+				</a>
+				<h5>{{product.title}}</h5>
+				<div>$150 by Coronado + 1208 </div>
+			</div>
+			{% endfor %}
 		</div>
 	</body>
 </html>
