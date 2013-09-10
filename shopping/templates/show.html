@@ -1,11 +1,5 @@
-<html>
-	<head>
-		<title>minishop</title>
-		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-	</head>
-
-	<body>
-		<div class="container">
+{% extends 'layout.html' %}
+{% block content %}
 			<div class="product">
 				<a href="/product/{{product.id}}">
 					<img src="{{product.image}}">
@@ -15,21 +9,25 @@
 				<pre>{{product.description}}</pre>
 			</div>
 
+			<div>
+				<a href="/favorite/{{product.id}}" class="btn btn-primary">Favorite</a>
+			</div>
+
+			<h3>댓글</h3>
 			<ul>
 			{% for comment in comments %}
-				<li>{{comment.content}} <a href="/comment/delete/{{comment.id}}">x</a></li>
+				<li><span class="label label-success">{{comment.user.username}}</span> {{comment.content}} <a href="/comment/delete/{{comment.id}}">x</a></li>
 			{% endfor %}
 			</ul>
-			<form action="/comment/create" method="post">
-				<fieldset>
-					<label>댓글</label>
-					<input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
+			<form class="form" action="/comment/create" method="post">
+				<div class="form-group">
+					<label>댓글쓰기</label>
+					<input class="form-control" type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
+				</div>
+				<div class="form-group">
 					<input type="hidden" name="product" value="{{product.id}}">
-					<textarea name="comment"></textarea>
-					<input type="submit" value="댓글쓰기">
-				</fieldset>
+					<textarea class="form-control" name="comment"></textarea>
+				</div>
+				<input type="submit" class="btn btn-info" value="댓글쓰기">
 			</form>
-		</div>
-
-	</body>
-</html>
+{% endblock %}

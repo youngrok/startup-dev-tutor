@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+	{% for favorite in favorites %}
+	<div class="product">
+		<a href="/product/{{favorite.product.id}}">
+			<img src="{{favorite.product.image}}">
+		</a>
+		<h5>{{favorite.product.name}}</h5>
+		<p>Favorited in {{favorite.created}}</p>
+	</div>
+	{% endfor %}
+{% endblock %}

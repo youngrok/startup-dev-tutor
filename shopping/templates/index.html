@@ -1,34 +1,18 @@
-<html>
-	<head>
-		<title>minishop</title>
-		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-		<style type="text/css">
-			.product {float: left; width: 240px; padding: 10px; }
-			.product img {width: 200px; }
-			.product h5 { height: 20px;}
-		</style>
-	</head>
+{% extends 'layout.html' %}
+{% block content %}
+	<style type="text/css">
+		.product {float: left; width: 240px; padding: 10px; }
+		.product img {width: 200px; }
+		.product h5 { height: 20px;}
+	</style>
 
-	<body>
-		<nav class="navbar navbar-default" role="navigation">
-		    <div class="navbar-header">
-		        <a class="navbar-brand" href="#">MiniShop</a>
-		    </div>
-		    <ul class="nav navbar-nav">
-		    	<li><a href="/">Featured</a></li>
-		    </ul>
-		</nav>
-
-		<div class="container">
-			{% for product in products %}
-			<div class="product">
-				<a href="/product/{{product.id}}">
-					<img src="{{product.image}}">
-				</a>
-				<h5>{{product.name}}</h5>
-				<div>$150 by Coronado + 1208 </div>
-			</div>
-			{% endfor %}
-		</div>
-	</body>
-</html>
+	{% for product in products %}
+	<div class="product">
+		<a href="/product/{{product.id}}">
+			<img src="{{product.image}}">
+		</a>
+		<h5>{{product.name}}</h5>
+		<div>$150 by Coronado + 1208 </div>
+	</div>
+	{% endfor %}
+{% endblock %}

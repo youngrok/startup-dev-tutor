@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>minishop</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+		    <div class="navbar-header">
+		        <a class="navbar-brand" href="/">MiniShop</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		    	<li><a href="/">Featured</a></li>
+		    	<li><a href="/favorites">Favorites</a></li>
+		   	</ul>
+		   	<ul class="nav navbar-nav pull-right">
+		    	{% if request.user.is_authenticated %}
+		    	<li><a href="/">{{ request.user.username }}</a></li>
+		    	<li><a href="/accounts/logout">Logout</a></li>
+		    	{% else %}
+		    	<li><a href="/accounts/login">Login</a></li>
+		    	{% endif %}
+		    </ul>
+		</nav>
+
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>
